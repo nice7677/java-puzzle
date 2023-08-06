@@ -1,4 +1,4 @@
-# 표현식 퍼즐
+# 2장. 표현식 퍼즐
 
 ## 1. 홀수 확인
 
@@ -260,6 +260,8 @@ x + i 의 결과가 String 자료형 이기에 생성된 문자열을 Object 타
 ```java
 x += i;
 ```
+# 3장. 문자 퍼즐
+
 ## 11. 최후의 웃음
 
 ```java
@@ -275,3 +277,30 @@ x += i;
 char는 String 보다는 int에 가깝다 근데 자바 라이브러리 대부분은 char를 String과 비슷하게 취급한다.
 
 `+연산자는 피연산자로 문자열이 있을 때만 문자열 연결 연산을 수행합니다.`
+
+## 12. ABC
+
+```java
+public static void main(String[]args){
+    String letters = "ABC";
+    char[] numbers = {'1', '2', '3'};
+    System.out.println(letters + " easy as " + numbers);
+}
+```
+
+출력 값이 `ABC easy as 123`으로 출력될 거라 생각하는 사람이 있을 것인데 정작 출력은 `ABC easy as [C@16f0472]`가 출력된다.
+
+char는 문자열이 아니기 때문이다. 그렇기 때문에 char를 문자열과 조합하기 위해서는 `String.valueOf(numbers)`와 같은 메서드로 문자열로 바꿔줘야 한다.
+
+## 13. 동물농장
+
+```java
+final String pig = "length: 10";
+final String dog = "length: " + pig.length();
+System.out.println("Animals are equal: " + pig == dog)
+```
+
+String 자료형 상수는 컴파일 시점에 인턴(intern) 된다.
+
+한마디로 같은 문자열 상수는 같은 참조이다.
+
